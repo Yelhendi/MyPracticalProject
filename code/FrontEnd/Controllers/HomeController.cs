@@ -6,26 +6,32 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using FrontEnd.Models;
-using System.Net.Http;
-using Microsoft.Extensions.Configuration;
 
 namespace FrontEnd.Controllers
 {
     public class HomeController : Controller
     {
-        private IConfiguration Configuration;
-        public HomeController(IConfiguration configuration)
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
         {
-            Configuration = configuration;
+            _logger = logger;
         }
-        public async Task<IActionResult> Index()
+
+        public IActionResult Index()
         {
-            //var mergedService = "https://localhost:44323/merge ";
-            var mergedService = $"{Configuration["mergedServiceURL"]}/merge";
-            var serviceThreeResponseCall = await new HttpClient().GetStringAsync(mergedService);
-            //want to show result on page 
-            ViewBag.responseCall = serviceThreeResponseCall;
             return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
