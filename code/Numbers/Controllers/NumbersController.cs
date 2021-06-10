@@ -21,8 +21,10 @@ namespace Numbers.Controllers
             public ActionResult<string> Get()
             {
                 var rnd = new Random();
-                var returnIndex = rnd.Next(0, 9);
-                return Numbers[returnIndex].ToString();
+            //var returnIndex = rnd.Next(0, 9);
+            var numbers = Enumerable.Range('0', '9' - '0' + 1).Select(x => (char)x);
+            //return Numbers[returnIndex].ToString();
+            return Numbers[numbers].ToString();
             }
         }
 }
