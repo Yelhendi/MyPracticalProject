@@ -15,6 +15,7 @@ namespace Merge.Controllers
     {
         //NumbersURL: https://localhost:44365/
         //LetterURL:https://localhost:44397/
+
         private IConfiguration Configuration;
         public MergeController(IConfiguration configuration)
         {
@@ -37,14 +38,14 @@ namespace Merge.Controllers
             var mergedResponse = $"{numbersResponseCall}{lettersResponseCall}";
             return Ok(mergedResponse);
 
-            Random random = new Random();
-            var password = string.Empty;
-            for (int i = 0; i < 15; i++)
-            {
-                var idx = random.Next(mergedResponse.Count());
-                password += mergedResponse[idx];
-            }
-            Console.WriteLine(password);
+            //Random random = new Random();
+            //var password = string.Empty;
+            //for (int i = 0; i < 15; i++)
+            //{
+            //    var idx = random.Next(mergedResponse.Count());
+            //    password += mergedResponse[idx];
+            //}
+            //Console.WriteLine(password);
         }
     }
 }
