@@ -69,6 +69,9 @@ The board consits of Epics which are broken down into corresponsing user stroies
 * Doing: Once I have began writing code this means that the task is in progress.
 * Done: Once the code has been considered and carries out its function it is placed in the done list.
 
+![image](https://user-images.githubusercontent.com/64641730/122683736-1c7dcb00-d1f9-11eb-9764-b9dd30da32d7.png)
+
+
 
 
 ## CI Pipeline 
