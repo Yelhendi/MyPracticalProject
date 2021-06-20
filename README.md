@@ -60,14 +60,14 @@ Below is a diagram which shows how the four services for my peoject interact:
 A trello board was used for the project management side of this project. This board shows everything that has been implimented into the project from Epics to Testing.
 The board consits of Epics which are broken down into corresponsing user stroies which outline the requirments of the epics. The user stories are broken down into tasks which are placed into the backlog, these tasks underpin all the technical aspects of the user stories. The board is colour-coded which is used link the Epics to User stroies and to tasks. Below shows a detailed explanation of what each section means.
 
-* Epics Encompase a vague feature or addition which is made up of several user stroies.
-* User Stories These are non-technical features that explain how the user uses the features.This keeps the development process user focused and puts the user experience first. 
-* Tasks These are the technical steps which are required  for the user stories. 
-* Backlog  This is a collection of items or products which need to be done.
-* Testing This out lines all the code testing that needs to be done in order to produce a coverage report. The functionality of the test will be tested.
-* To do These are the tasks that need to be done. These will be taken from the backlog and when put in progress these will be the tasks that will be put into focus.
-* Doing Once I have began writing code this means that the task is in progress.
-* Done Once the code has been considered and carries out its function it is placed in the done list.
+* Epics: Encompase a vague feature or addition which is made up of several user stroies.
+* User Stories: These are non-technical features that explain how the user uses the features.This keeps the development process user focused and puts the user experience first. 
+* Tasks: These are the technical steps which are required  for the user stories. 
+* Backlog:  This is a collection of items or products which need to be done.
+* Testing: This out lines all the code testing that needs to be done in order to produce a coverage report. The functionality of the test will be tested.
+* To do: These are the tasks that need to be done. These will be taken from the backlog and when put in progress these will be the tasks that will be put into focus.
+* Doing: Once I have began writing code this means that the task is in progress.
+* Done: Once the code has been considered and carries out its function it is placed in the done list.
 
 
 
@@ -83,7 +83,8 @@ This process is handled by Azure pipelines with distinct build stages. The desig
 
 
 ## Risk Assesment
-The screen shot below shows the risk assessment of the app, possible risks that could occur to the user of the app. The risk assessment contains the risks, liklihood,severity,control measures and revisits.
+The screen shot below shows the risk assessment of the app, possible risks that could occur to the user of the app. The risk assessment contains the risks, liklihood,severity,control measures and revisits
+![image](https://user-images.githubusercontent.com/64641730/122683627-64e8b900-d1f8-11eb-877d-97a06263896a.png)
 
 ## Coverage Report
 The screen shot below shows the converage report of my app. The coverage is _________ this is significantly ______than the value which was required. The tests consisted of x unit testing. The controllers were tested this included the merge,numbers,home and letters controller. Integration testing was used to test the features of the code. 
