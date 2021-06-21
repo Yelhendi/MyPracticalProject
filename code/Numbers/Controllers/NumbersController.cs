@@ -18,7 +18,7 @@ namespace Numbers.Controllers
             char[] SpecialCharacters = { '$', '&', '!', '£', '%', '?' };
             string password = string.Empty;
             Random random = new Random();
-            int length = 6;
+            int length = 5;
 
             for (int i = 0; i < length ; i++)
             {
