@@ -23,6 +23,7 @@ namespace Letters.Controllers
 
                 int x = random.Next(1, UpperCase.Length);
                 int y = random.Next(1, LowerCase.Length);
+
                 //Don't Allow Repetation of Characters
                 if (!password.Contains(UpperCase.GetValue(x).ToString()))
                     password += UpperCase.GetValue(x);
