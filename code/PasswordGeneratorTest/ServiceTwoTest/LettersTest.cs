@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Letters.Controllers;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using Xunit;
 
 namespace PasswordGeneratorTest
 {
-    class LettersTest
+    public class LettersTest
     {
+        [Fact]
+
+        public void GetLetter_Test()
+        {
+            //Arrange
+            LettersController lettersController = new LettersController();
+            //Act
+            var lettersControllerResult = lettersController.Get();
+            //Assert
+            Assert.NotNull(lettersControllerResult);
+            Assert.IsType<ActionResult<String>>(lettersControllerResult);
+        }
     }
 }
