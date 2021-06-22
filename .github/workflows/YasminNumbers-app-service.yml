@@ -6,7 +6,7 @@ on:
 env:
   AZURE_WEBAPP_NAME: YasminNumbers-app-service
   AZURE_WEBAPP_PACKAGE_PATH: ./code/Numbers/publish
-  AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.YasminNumbers_app_service_37af }}
+  AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.YasminNumbers_app_service_36c7 }}
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 5.0.x
   WORKING_DIRECTORY: ./code/Numbers
