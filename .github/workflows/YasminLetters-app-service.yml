@@ -6,7 +6,7 @@ on:
 env:
   AZURE_WEBAPP_NAME: YasminLetters-app-service
   AZURE_WEBAPP_PACKAGE_PATH: ./code/Letters/publish
-  AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.YasminLetters_app_service_2777 }}
+  AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.YasminLetters_app_service_e4a1 }}
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 5.0.x
   WORKING_DIRECTORY: ./code/Letters
