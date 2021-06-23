@@ -16,7 +16,7 @@ namespace Letters.Controllers
             char[] LowerCase = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z' };
             string password = string.Empty;
             Random random = new Random();
-            int length = 5;
+            int length = 10;
 
             for (int i = 0; i < length; i++)
             {
