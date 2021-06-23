@@ -65,10 +65,6 @@ Below is a flow diagram which shows how the four services created for my peoject
 ![image](https://user-images.githubusercontent.com/64641730/123110280-d791a880-d433-11eb-9952-f4a8f95abf1e.png)
 
 
-
-
-
-
 ## Project Tracking
 A trello board was used for the project management side of this project. This board shows everything that has been implimented into the project from Epics to Testing.
 The board consits of Epics which are broken down into corresponsing user stroies which outline the requirments of the epics. In this project however, there were not many user stories as the user only interacts with the frontend and does not have to input any values to obtain an output. The user stories are broken down into tasks which are placed into the backlog, these tasks underpin all the technical aspects of the user stories. The board is colour-coded which is used link the Epics to User stroies and to tasks. Below shows a detailed explanation of what each section means.
@@ -85,8 +81,6 @@ The board consits of Epics which are broken down into corresponsing user stroies
 ![image](https://user-images.githubusercontent.com/64641730/122683736-1c7dcb00-d1f9-11eb-9764-b9dd30da32d7.png)
 
 
-
-
 ## CI Pipeline 
 
 Pictured below is the continuous integration pipeline with the associated frameworks and services related to them. This pipeline allows for rapid and simple development-to-deployment by automating the integration process, i.e. This means I can make a change to my code on my local machine and push it to GitHub, which will automatically push the new code to GitHub actions.
@@ -101,20 +95,83 @@ The diagram shows various tools that were all used in the implementation and dep
 * Terraform was used to manage the infrastructure of my app services and enable continuous deployment to these services via the pipelines produced.
 
 
-![image](https://user-images.githubusercontent.com/64641730/123125207-378e4c00-d440-11eb-97c7-bb2980d740a7.png)
+![image](https://user-images.githubusercontent.com/64641730/123130590-c8672680-d444-11eb-8421-e478ca9caeac.png)
 
+The process of deployment is as follows:
+Firstly, A terraform file is created this contains all the relavent infrastructure. Within this file a for/each loop was produced in order to create the app services, these included YasminNumbers-app-service,YasminMerge-app-service,YasminLetters-app-service and YasminFrontEnd-app-service.
+
+A resource group was also created using the terraform file as shown below.
+
+![image](https://user-images.githubusercontent.com/64641730/123132061-395b0e00-d446-11eb-8719-b555e651dcbf.png)
+
+After creating the terraform file and typing the following commands into the command prompt.
+Terraform init - to initialise the terraform file
+Terraform plan- this creates an execution plan, which lets you preview the changes that Terraform plans to make to your infrastructure
+Terraform- this executes the actions proposed in a Terraform plan
+
+Once completed this would have produced four different app services, under the same resource group.
+
+The controllers are then published using visual studio code and selecting the associated app-service. CI/CD pipeline is selected and this generates a Yaml file which contains that pipeline for that controller.
+
+![image](https://user-images.githubusercontent.com/64641730/123133257-7673d000-d447-11eb-93e2-431a6ac6501a.png)
+
+The Yml file states that on push to the master branch the following build and deploy actions should take place. This is contained under name and run. 
+Changes to the Yml file that were required included adding the specific directory where my code was stored in the AZURE_WEBAPP_PACKAGE_PATH and WORKING_DIRECTORY. Once completed this was commited and the workflow run. The build and deploy process was then triggered.
+
+Below shpws the build and deploy process:
+![image](https://user-images.githubusercontent.com/64641730/123130653-d6b54280-d444-11eb-908d-e12081cee58d.png)
 
 
 ## Risk Assesment
-The screen shot below shows the risk assessment of the app, possible risks that could occur to the user of the app. The risk assessment contains the risks, liklihood,severity,control measures and revisits
+The screen shot below shows the risk assessment of the app, possible risks that could occur to the user of the app. The risk assessment contains the risks, liklihood,severity,control measures and revisits where I provided updates on the various risks.
 ![image](https://user-images.githubusercontent.com/64641730/122683627-64e8b900-d1f8-11eb-877d-97a06263896a.png)
 
+# Testing
+This section contains the details testing including the code coverage report and unit testing conducted.
+
+![image](https://user-images.githubusercontent.com/64641730/123136157-85a84d00-d44a-11eb-957c-ceaef6544c4c.png)
+
+The testing conducted here was Arrange, Act and Assert testing pattern, a total of 4 unit tests were conducted for this project which tested the operations required for those controllers such as producing the required output.
+
 ## Coverage Report
-The screen shot below shows the converage report of my app. The coverage is _________ this is significantly ______than the value which was required. The tests consisted of x unit testing. The controllers were tested this included the merge,numbers,home and letters controller. Integration testing was used to test the features of the code. 
+![image](https://user-images.githubusercontent.com/64641730/123134770-0a926700-d449-11eb-90e1-1be9cc10746a.png)
+
+The screen shot above shows the coverage report of my app. The coverage is 73% this is significantly high value and is above the value which was required. The tests consisted of x unit testing. These are designed to assert that if a certain function is run, the output should be a known value. The controllers were tested this included the merge,numbers,home and letters controller. The result could of been higher if I was able to find a way to exclude code that was not intended to be tested, for instance the views in the front end. 
+
+![image](https://user-images.githubusercontent.com/64641730/123134849-1d0ca080-d449-11eb-961e-d5ea014eda58.png)
+From the image above we can see that the controllers that were intially required to be tested. Three controllers had an average percentage above 94% however the merge controller had a lower percentage of 64.2% which intern reduced the overall test score as well as having the frontcontroller view in the final report.
+
+![image](https://user-images.githubusercontent.com/64641730/123135285-868caf00-d449-11eb-96ad-52cabacdc8b1.png)
+The code above shows the parts of the merge controller that were not tested. This included the else if loop. This was because I was unable to understand how to conduct the x-unit test on thhis kind of logic correctly and accuratley. 
 
 ## Setup
+## Best Practices
 
-## Features
+# Thinbgs to consider in the future
+
+
+
+## Issues
+When completing the project many issues arose, these were noted down so if this occured in the futre I would understand the next steps to take:
+* When deploying using CI/CD pipeline on visual studio it is important to make 2 small changes to the yml file before commiting and pushing the workflow. This includes specifying the directory your code is in. For example, adding *./code/* AZURE_WEBAPP_PACKAGE_PATH  and  WORKING_DIRECTORY. This will allow the deployment process to run smoothly as it is able to find the relavent code in the directory.
+* To ensure that I have added the terraform in tor the gitignore as this is a large file and should not be pushed onto GitHub.
+* The push and commit fucntion stopped working on my visual studio this meant I had to remove all the catched data and reset anything that was not pushed using the following function `git reset --hard @{u}`. Before doing this I had to ensure that all my code was saved and anything that had not yet been pushed was copied.
+* When writing my terraform file it was important to include the AppSettings infront of the service URL which was also present in the appsettings.json file this ensured that the app-services produced were configured therefore when running the URL the application would work.
+* Finally, an issue with GitHub Actions occured which was outside my control. The server had gone down and chnages to my application were not being made and deployment was failing. This can be shown in the screenshot below:
+
+ ![image](https://user-images.githubusercontent.com/64641730/123140307-0a956580-d44f-11eb-8de5-0799313b4c9a.png)
+
+* The above image specifies the error that had occured. This meant my website incurred some downtime. Next time this error occurs it is important to wait until making another change to the website, until the server is running again. Thsi could of been to the high voulume of people using the server potentially leading to the server to break.
+
+
+## Improvements
+* Making the password generator contain a database, so that already generated passwords can be stored.
+* To ensure the code coverage report contained a higher percentage above 90% by excluding things that were not required to be tested
+* Changing the layout of the UI, make it more visually appealing to the user.
+
+
+## Aknowlegements 
+Thank you Dara and victoria for all your help.
 
 ## Status
 Project is: _in progress_ as I want to try and add on extra features to imporve the project.
