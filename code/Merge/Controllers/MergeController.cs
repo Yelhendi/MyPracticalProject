@@ -45,7 +45,7 @@ namespace Merge.Controllers
         {
             var input = password;
             var Message = string.Empty;
-
+            //The Regex class is used for representing a regular expression.The Regex class is used for representing a regular expression.
             var hasNumber = new Regex(@"[0-9]+");
             var hasUpperChar = new Regex(@"[A-Z]+");
             var hasLowerChar = new Regex(@"[a-z]+");
