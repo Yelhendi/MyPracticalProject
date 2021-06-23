@@ -1,5 +1,5 @@
 # MyPracticalProject
-> This is a simple password generator app made using visual studio, C# and ASP.NET and deployed usinf Microsoft azure app service and terraform.
+> This is a simple password generator app made using visual studio, C# and ASP.NET and deployed using github actions and Terraform.
 
 * [General info](#general-info)
 * [Technologies](#technologies)
@@ -15,44 +15,54 @@
 
 
 ## General info
-The purpose of this project was to create an application that generates “Objects” upon a set of predefined rules where the “Objects” can be from any domain.
+The purpose of this project was to create an application that generates “Objects” upon a set of predefined rules where the “Objects” can be from any domain. This would encompase prior learning that was conducted by QA. Prior subject knowlege that would be applied to this project are:
 
-## Technologies
-* C# - version 9.0
-* ASP.NET- version 5.0.5
+* Continuous development 
+* Cloud Fundamentals 
+* Software development within c#
 
 ## Project requirements 
 
-  * `To contain a trelllo board which will allow you to keep track of project planning`
+  * `To contain a trello board which will allow you to keep track of project planning`
   * `To include a risk assesment of the project`
   * `To produce an application with fully integrated using the Feature-Branch model into a Version Control System which will subsequently be built through a CI server and deployed to a cloud-based environment.`
   * `To ensure if a change is made to the project Azure Pipelines recreates and redeploys the changed application`
   * `The project must follow a setvice orientated architecture`
-  * `The application must be deployed using Azure as a platform`
+  * `The application must be deployed using Azure as a platform via terraform`
+
+## Technologies
+* C# - version 9.0
+* ASP.NET- version 5.0.5
+* Terraform - version 1.0.0
+* GitHub Action
+
 
 ## Architecture 
-The project specification requires at least 4 service orientated services to work together. Where:
-Service 1 is the core service this will enable the rendering of the HTML that is required to interact with the application as well as being responsible for communciating with the other three services. 
-Service 2 and 3 are services required to generate a random object.  
-Finally, service 4 will also generate an object based upon those of service 2 and 3.
+
+The project specification requires at least 4 service orientated services to work together.
+Where:
+* Service 1 is the core service this will enable the rendering of the HTML that is required to interact with the application as well as being responsible for communciating with the other three services. 
+* Service 2 and 3 are services required to generate a random object.  
+* Finally, service 4 will also generate an object based upon those of service 2 and 3.
 
 ### My Approach 
-To achieve these requirments that have been set out in the project brief I decided to make a password generator app that contains services to do the following:
+To achieve these requirments that have been set out in the project brief I decided to make a password generator app that contains services thst do the following:
 
-* service 1 that will be able to render HTML and required interact with the application:
+Service 1 render HTML and required interact with the application:
       * This is shown as the front end which is able to communicate with the other services to show the result of the services.
-* Service 2 that will generate a random object.
+Service 2 that will generate a random object:
       * Generates a random number
       * Genrates a random special character
-* Service 3 generates another random object
+Service 3 generates another random object:
       * Generates a random uppercase letter 
       * Generates a random lowercase letter
-* Service 4 generates object based on service 3 and 4.
+Service 4 generates object based on service 3 and 4:
       * This merges service 2 and 3 to produce a string.
-      * Contains a if else loop that states how strong the password is
+      * Contains a if/ else loop that states the strength of the password.
 
-Below is a flow diagram which shows how the four services for my peoject interact:
+Below is a flow diagram which shows how the four services created for my peoject interact:
 
+![image](https://user-images.githubusercontent.com/64641730/123110280-d791a880-d433-11eb-9952-f4a8f95abf1e.png)
 
 
 
@@ -61,7 +71,7 @@ Below is a flow diagram which shows how the four services for my peoject interac
 
 ## Project Tracking
 A trello board was used for the project management side of this project. This board shows everything that has been implimented into the project from Epics to Testing.
-The board consits of Epics which are broken down into corresponsing user stroies which outline the requirments of the epics. The user stories are broken down into tasks which are placed into the backlog, these tasks underpin all the technical aspects of the user stories. The board is colour-coded which is used link the Epics to User stroies and to tasks. Below shows a detailed explanation of what each section means.
+The board consits of Epics which are broken down into corresponsing user stroies which outline the requirments of the epics. In this project however, there were not many user stories as the user only interacts with the frontend and does not have to input any values to obtain an output. The user stories are broken down into tasks which are placed into the backlog, these tasks underpin all the technical aspects of the user stories. The board is colour-coded which is used link the Epics to User stroies and to tasks. Below shows a detailed explanation of what each section means.
 
 * Epics: Encompase a vague feature or addition which is made up of several user stroies.
 * User Stories: These are non-technical features that explain how the user uses the features.This keeps the development process user focused and puts the user experience first. 
@@ -79,13 +89,20 @@ The board consits of Epics which are broken down into corresponsing user stroies
 
 ## CI Pipeline 
 
-Pictured below is the continuous integration pipeline with the associated frameworks and services related to them. This pipeline allows for rapid and simple development-to-deployment by automating the integration process, i.e. I can produce code on my local machine and push it to GitHub, which will automatically push the new code to Microsoft app service. Code was tested using an X-Unit test and a code coverage report was produced.
+Pictured below is the continuous integration pipeline with the associated frameworks and services related to them. This pipeline allows for rapid and simple development-to-deployment by automating the integration process, i.e. This means I can make a change to my code on my local machine and push it to GitHub, which will automatically push the new code to GitHub actions.
 
-This process is handled by Azure pipelines with distinct build stages. The design of this type of job means that if a previous build stage fails, the job will fail altogether and provide you with detailed information as to where this occurred. The more modular you make this system, the easier it is to pinpoint where your code is failing. As pictured below, the four build stages are:
-* 'Checkout SCM' (pull code from Git respository)
-* 'Build' (would be more accurately named 'Installation' as Python doesn't require building, in the strictest sense)
-* 'Test' (run xunit test, produce coverage report) 
-* 'Run' (start the passwordgenerator app service on the local VM, belonging to systemctl)
+This process is handled by GitHub Actions with distinct build  and deploy stages. The design of this type of job means that if any previous build stage fails, the job will fail altogether and provide you with information as to where this occurred.
+The diagram shows various tools that were all used in the implementation and deployment of this code.
+* The source code used was C# this is because it is a modern, open-source and cross platform language.
+* The version control system (VCS) used was GIT, this is used for branching, merging, unifying, resolving, tracking changes and as a collaboration tool. The Version Control System provider is GitHub.
+* The project mamanagement tool selected was trello, this allowed me to keep track of tasks that I had to complete and prioritise them. 
+* GitHub Actions was used as the CI/CD pipeline tool to automate the whole deploymenbt process. In particular GitHub actions was used as it was easier to manage and produce workflows with git.
+* X-Unit testing was conducted on videual studio.
+* Terraform was used to manage the infrastructure of my app services and enable continuous deployment to these services via the pipelines produced.
+
+
+![image](https://user-images.githubusercontent.com/64641730/123125207-378e4c00-d440-11eb-97c7-bb2980d740a7.png)
+
 
 
 ## Risk Assesment
