@@ -31,7 +31,10 @@ The purpose of this project was to create an application that generates “Objec
   * `The application must be deployed using Azure as a platform`
 
 ## Architecture 
-The project specification requires at least 4 service orientated services to work together. Where service 1 is the core service this will enable the rendering of the HTML tha is required to interact with the application as well as being responsible for communciating with the other three services. Service 2 and 3 are services required to generate a random object.  Finally, service 4 will also generate an object based upon those of service 2 and 3.
+The project specification requires at least 4 service orientated services to work together. Where:
+Service 1 is the core service this will enable the rendering of the HTML that is required to interact with the application as well as being responsible for communciating with the other three services. 
+Service 2 and 3 are services required to generate a random object.  
+Finally, service 4 will also generate an object based upon those of service 2 and 3.
 
 ### My Approach 
 To achieve these requirments that have been set out in the project brief I decided to make a password generator app that contains services to do the following:
@@ -48,7 +51,7 @@ To achieve these requirments that have been set out in the project brief I decid
       * This merges service 2 and 3 to produce a string.
       * Contains a if else loop that states how strong the password is
 
-Below is a diagram which shows how the four services for my peoject interact:
+Below is a flow diagram which shows how the four services for my peoject interact:
 
 
 
