@@ -54,7 +54,7 @@ Where:
 To achieve these requirements set in the project brief I decided to make a password generator app that contains services that do the following:
 
 Service 1 render HTML and required interact with the application:
-      * This is shown as the front end which can communicate with the other services to show the result of the services.
+       * This is shown as the front end which can communicate with the other services to show the result of the services.
       
 Service 2 that will generate a random object:
       * Generates a random number
@@ -115,9 +115,9 @@ A resource group was also created using the terraform file as shown below.
 ![image](https://user-images.githubusercontent.com/64641730/123132061-395b0e00-d446-11eb-8719-b555e651dcbf.png)
 
 After creating the terraform file and typing the following commands into the command prompt.
-Terraform init - to initialise the terraform file
-Terraform plan- this creates an execution plan, which lets you preview the changes that Terraform plans to make to your infrastructure
-Terraform apply - this executes the actions proposed in a Terraform plan
+* Terraform init - to initialise the terraform file
+* Terraform plan- this creates an execution plan, which lets you preview the changes that Terraform plans to make to your infrastructure
+* Terraform apply - this executes the actions proposed in a Terraform plan
 
 Once completed this would have produced four different app services, under the same resource group.
 
