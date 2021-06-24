@@ -65,6 +65,8 @@ Service 4 generates object based on service 3 and 4:
       * This merges service 2 and 3 to produce a string.
       * Contains a if/ else loop that states the strength of the password.
       
+      
+      
 ![image](https://user-images.githubusercontent.com/64641730/123157395-61f10100-d462-11eb-99e8-74cadd2637f4.png)
 
 
