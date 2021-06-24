@@ -55,20 +55,19 @@ To achieve these requirments that have been set out in the project brief I decid
 
 Service 1 render HTML and required interact with the application:
       * This is shown as the front end which is able to communicate with the other services to show the result of the services.
+      
 Service 2 that will generate a random object:
       * Generates a random number
       * Genrates a random special character
+      
 Service 3 generates another random object:
       * Generates a random uppercase letter 
       * Generates a random lowercase letter
+      
 Service 4 generates object based on service 3 and 4:
       * This merges service 2 and 3 to produce a string.
       * Contains a if/ else loop that states the strength of the password.
       
-      
-      
-
-
 
 Below is a flow diagram which shows how the four services created for my peoject interact:
 
