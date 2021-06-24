@@ -102,8 +102,7 @@ The diagram shows various tools that were all used in the implementation and dep
 * X-Unit testing was conducted on visual studio.
 * Terraform was used to manage the infrastructure of my app services and enable continuous deployment to these services via the pipelines produced.
 
-
-![image](https://user-images.githubusercontent.com/64641730/123130590-c8672680-d444-11eb-8421-e478ca9caeac.png)
+![image](https://user-images.githubusercontent.com/64641730/123214842-9f37ac00-d4bf-11eb-812d-7b72b8e4e1dd.png)
 
 The process of deployment is as follows:
 Firstly, A terraform file is created this contains all the relevant infrastructure. Within this file a for/each loop was produced in order to create the app services, these included YasminNumbers-app-service, YasminMerge-app-service,YasminLetters-app-service and YasminFrontEnd-app-service.
@@ -154,6 +153,7 @@ The code above shows the parts of the merge controller that were not tested. Thi
 
 # Setup
 <img width="484" alt="Capture-new frontend" src="https://user-images.githubusercontent.com/64641730/123150843-ba240500-d45a-11eb-8773-2ffec45c77a7.PNG">
+
 Above is an image the user will see when opening this web page.
 
 A typical user story journey includes:
