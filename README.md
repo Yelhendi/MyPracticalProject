@@ -55,19 +55,25 @@ To achieve these requirments that have been set out in the project brief I decid
 
 Service 1 render HTML and required interact with the application:
       * This is shown as the front end which is able to communicate with the other services to show the result of the services.
+      
 Service 2 that will generate a random object:
       * Generates a random number
       * Genrates a random special character
+      
 Service 3 generates another random object:
       * Generates a random uppercase letter 
       * Generates a random lowercase letter
+      
 Service 4 generates object based on service 3 and 4:
       * This merges service 2 and 3 to produce a string.
       * Contains a if/ else loop that states the strength of the password.
+      
 
 Below is a flow diagram which shows how the four services created for my peoject interact:
 
 ![image](https://user-images.githubusercontent.com/64641730/123110280-d791a880-d433-11eb-9952-f4a8f95abf1e.png)
+
+![image](https://user-images.githubusercontent.com/64641730/123157395-61f10100-d462-11eb-99e8-74cadd2637f4.png)
 
 
 ## Project Tracking
@@ -95,12 +101,11 @@ The diagram shows various tools that were all used in the implementation and dep
 * The source code used was C# this is because it is a modern, open-source and cross platform language.
 * The version control system (VCS) used was GIT, this is used for branching, merging, unifying, resolving, tracking changes and as a collaboration tool. The Version Control System provider is GitHub.
 * The project management tool selected was Trello, this allowed me to keep track of tasks that I had to complete and prioritise them. 
-* GitHub Actions was used as the CI/CD pipeline tool to automate the whole deployment process. GitHub actions was used as it was easier to manage and produce workflows with git.
+* GitHub Actions was used as the CI/CD pipeline tool to automate the whole deployment process. Yaml files were produced that represented the pipline of each service. GitHub actions was used as it was easier to manage and produce workflows with git.
 * X-Unit testing was conducted on visual studio.
-* Terraform was used to manage the infrastructure of my app services and enable continuous deployment to these services via the pipelines produced.
+* Terraform was used to manage the infrastructure of my app services and enable continuous deployment to these services.
 
-
-![image](https://user-images.githubusercontent.com/64641730/123130590-c8672680-d444-11eb-8421-e478ca9caeac.png)
+![image](https://user-images.githubusercontent.com/64641730/123214842-9f37ac00-d4bf-11eb-812d-7b72b8e4e1dd.png)
 
 The process of deployment is as follows:
 Firstly, A terraform file is created this contains all the relevant infrastructure. Within this file a for/each loop was produced in order to create the app services, these included YasminNumbers-app-service, YasminMerge-app-service,YasminLetters-app-service and YasminFrontEnd-app-service.
@@ -151,6 +156,7 @@ The code above shows the parts of the merge controller that were not tested. Thi
 
 # Setup
 <img width="484" alt="Capture-new frontend" src="https://user-images.githubusercontent.com/64641730/123150843-ba240500-d45a-11eb-8773-2ffec45c77a7.PNG">
+
 Above is an image the user will see when opening this web page.
 
 A typical user story journey includes:
