@@ -101,9 +101,9 @@ The diagram shows various tools that were all used in the implementation and dep
 * The source code used was C# this is because it is a modern, open-source and cross platform language.
 * The version control system (VCS) used was GIT, this is used for branching, merging, unifying, resolving, tracking changes and as a collaboration tool. The Version Control System provider is GitHub.
 * The project management tool selected was Trello, this allowed me to keep track of tasks that I had to complete and prioritise them. 
-* GitHub Actions was used as the CI/CD pipeline tool to automate the whole deployment process. GitHub actions was used as it was easier to manage and produce workflows with git.
+* GitHub Actions was used as the CI/CD pipeline tool to automate the whole deployment process. Yaml files were produced that represented the pipline of each service. GitHub actions was used as it was easier to manage and produce workflows with git.
 * X-Unit testing was conducted on visual studio.
-* Terraform was used to manage the infrastructure of my app services and enable continuous deployment to these services via the pipelines produced.
+* Terraform was used to manage the infrastructure of my app services and enable continuous deployment to these services.
 
 ![image](https://user-images.githubusercontent.com/64641730/123214842-9f37ac00-d4bf-11eb-812d-7b72b8e4e1dd.png)
 
